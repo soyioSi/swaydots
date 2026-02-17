@@ -1,0 +1,65 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 0,
+
+  "modules-center": ["sway/workspaces"],
+  "modules-left": ["clock"],
+  "modules-right": [
+    "network",
+    "pulseaudio",
+    "battery",
+    "custom/openvpn"
+  ],
+
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "persistent-workspaces": {
+      "*": [1,2,3,4,5]
+    },
+    "format": "{icon}",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "󰍡",
+      "4": "",
+      "5": "󰒱",
+      "default": ""
+    }
+  },
+
+  "clock": {
+    "format": "  {:%H:%M}",
+    "tooltip": false
+  },
+
+  "network": {
+    "format-wifi": "  {signalStrength}%",
+    "format-ethernet": "󰈀  wired",
+    "format-disconnected": "󰖪",
+    "tooltip": false
+  },
+
+  "pulseaudio": {
+    "format": "  {volume}%",
+    "format-muted": "",
+    "tooltip": false
+  },
+
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon}  {capacity}%",
+    "format-icons": ["", "", "", "", ""],
+    "tooltip": false
+  },
+  "custom/openvpn": {
+  "exec": "ip link show tun0 >/dev/null 2>&1 && echo '{\"text\":\" VPN\",\"class\":\"connected\"}' || echo '{\"text\":\" VPN\",\"class\":\"disconnected\"}'",
+  "return-type": "json",
+  "interval": 5,
+  "tooltip": false
+  }
+}

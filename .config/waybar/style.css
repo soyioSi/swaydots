@@ -1,0 +1,99 @@
+* {
+  font-family: "CaskaydiaCove Nerd Font";
+  font-size: 12px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: transparent;
+  color: #cdd6f4;
+  border: none;
+  box-shadow: none;
+}
+
+#workspaces {
+  padding: 4px 10px;
+  background: #111111;
+  border-radius: 8px;
+}
+
+#workspaces button {
+  padding: 4px 10px;
+  background: transparent;
+  color: #6c7086;
+  border-radius: 8px;
+}
+
+#workspaces button.active {
+  color: #89b4fa;
+  font-weight: bold;
+}
+
+#workspaces button:hover {
+  background: #1e222a;
+}
+
+#clock {
+  color: #a6adc8;
+  padding: 4px 10px;
+  background: #111111;
+  border-radius: 8px;
+}
+
+#network {
+  color: #89b4fa;
+  padding: 4px 10px;
+  background:#111111;
+  border-radius: 8px
+}
+
+#pulseaudio {
+  color: #94e2d5; 
+  padding: 4px 10px;
+  background:#111111;
+  border-radius: 8px
+}
+
+#battery {
+  padding: 4px 10px;
+  background:#111111;
+  border-radius: 8px;
+  color: #a6e3a1;
+}
+
+#battery.warning {
+  padding: 4px 10px;
+  background:#111111;
+  border-radius: 8px;
+
+  color: #f9e2af;
+}
+
+#battery.critical {
+  padding: 4px 10px;
+  background:#111111;
+  border-radius: 8px;
+
+  color: #f38ba8;
+}
+
+#custom-openvpn {
+  padding: 4px 10px;
+  background:#111111;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+#custom-openvpn {
+  padding: 4px 10px;
+  background:#111111;
+  border-radius: 8px;
+  color: #f38ba8; /* rojo por defecto */
+}
+
+#custom-openvpn.connected {
+  padding: 4px 10px;
+  background:#111111;
+  border-radius: 8px;
+  color: #a6e3a1; /* verde cuando OK */
+}

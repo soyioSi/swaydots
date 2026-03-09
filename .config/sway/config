@@ -1,14 +1,16 @@
 ### VARIABLES ###
 set $mod Mod4
-set $terminal alacritty
-set $fileManager dolphin
+set $terminal kitty
+set $fileManager thunar
 set $menu rofi -show drun
 
 ### OUTPUT ###
 output * resolution 1920x1080 position 0,0 scale 1
 
 ### AUTOSTART ###
-exec_always swaybg -i /home/santi/Pictures/wallpapers/black_hole.jpg -m fill
+exec_always swaybg -i /home/santi/Pictures/wallpapers/black-hole.jpg -m fill
+exec_always dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+exec_always systemctl --user restart xdg-desktop-portal
 
 ### INPUT ###
 input type:keyboard {

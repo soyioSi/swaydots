@@ -97,3 +97,20 @@ window#waybar {
   border-radius: 8px;
   color: #a6e3a1; /* verde cuando OK */
 }
+
+#custom-settarget.active {
+  color: #ff5555;
+  font-weight: bold;
+}
+
+#custom-settarget.inactive {
+  color: #666666;
+}
+
+#custom-openvpn.connected {
+  color: #50fa7b;
+}
+
+#custom-openvpn.disconnected {
+  color: #ff5555;
+}

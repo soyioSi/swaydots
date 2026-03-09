@@ -9,6 +9,7 @@
     "network",
     "pulseaudio",
     "battery",
+    "custom/settarget",
     "custom/openvpn"
   ],
 
@@ -56,10 +57,19 @@
     "format-icons": ["", "", "", "", ""],
     "tooltip": false
   },
+
+  "custom/settarget": {
+    "exec": "if [ -f /tmp/waybar_target ]; then IP=$(cut -d'|' -f1 /tmp/waybar_target); NAME=$(cut -d'|' -f2 /tmp/waybar_target); echo \"{\\\"text\\\":\\\"🎯 $IP | $NAME\\\",\\\"class\\\":\\\"active\\\"}\"; else echo \"{\\\"text\\\":\\\"󰓾 no target\\\",\\\"class\\\":\\\"inactive\\\"}\"; fi",
+    "return-type": "json",
+    "on-click": "cut -d'|' -f1 /tmp/waybar_target | wl-copy",
+    "signal": 8,
+    "tooltip": false
+  },
+
   "custom/openvpn": {
-  "exec": "ip link show tun0 >/dev/null 2>&1 && echo '{\"text\":\" VPN\",\"class\":\"connected\"}' || echo '{\"text\":\" VPN\",\"class\":\"disconnected\"}'",
-  "return-type": "json",
-  "interval": 5,
-  "tooltip": false
+    "exec": "ip link show tun0 >/dev/null 2>&1 && echo '{\"text\":\" VPN\",\"class\":\"connected\"}' || echo '{\"text\":\" VPN\",\"class\":\"disconnected\"}'",
+    "return-type": "json",
+    "interval": 5,
+    "tooltip": false
   }
 }
